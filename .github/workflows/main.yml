@@ -18,11 +18,15 @@ jobs:
       with:
         python-version: '3.10'
 
-    # ✅ config.json 파일을 'file' 폴더 안에 생성하도록 수정
+    # ✅ 'file' 폴더가 없을 경우를 대비해 생성하는 단계를 추가하여 오류를 원천 차단합니다.
+    - name: Ensure 'file' directory exists
+      run: mkdir -p file
+
+    # ✅ 이제 'file' 폴더가 확실히 있으므로, 그 안에 config.json 파일을 생성합니다.
     - name: Create config file from secret
       run: echo "${{ secrets.CONFIG_JSON }}" > file/config.json
 
-    # ✅ 파이썬 스크립트를 'file' 폴더 안에서 실행하도록 수정
+    # ✅ 'file' 폴더 안에서 파이썬 스크립트를 실행합니다.
     - name: Run email script
       working-directory: ./file
       env:
