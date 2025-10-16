@@ -28,7 +28,7 @@ jobs:
     
     - name: Check file structure
         run: ls -R
-    # 파이썬 스크립트를 실행합니다.
+
     - name: Run email script
       env:
         SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
@@ -36,5 +36,5 @@ jobs:
         SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
       run: python wanted_mailer_auto.py
-     
+
 
