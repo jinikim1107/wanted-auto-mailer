@@ -28,17 +28,13 @@ jobs:
     
     - name: Check file structure
         run: ls -R
-
-      - name: Run email script
-        run: python wwanted_mailer_auto.py
-        
-    # ✅ 'file' 폴더 안에서 파이썬 스크립트를 실행합니다.
+    # 파이썬 스크립트를 실행합니다.
     - name: Run email script
-      working-directory: ./file
       env:
         SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
         SMTP_PORT: ${{ secrets.SMTP_PORT }}
         SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-      run: python send_email.py
+      run: python wanted_mailer_auto.py
+     
 
