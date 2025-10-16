@@ -1,9 +1,10 @@
 {
     "location": ["서울", "경기"],
-    "jobs": ["개발", "데이터", "AI"],
-    "years": 1,
+    "job": ["개발", "데이터", "AI"],
+    "year": 1,
     "email": "jinikim05@gmail.com"
   }
 
   
+
 
