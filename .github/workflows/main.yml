@@ -27,7 +27,7 @@ jobs:
       run: echo "${{ secrets.CONFIG_JSON }}" > file/config.json
     
     - name: Check file structure
-        run: ls -R
+      run: ls -R  # 👈 여기 들여쓰기를 수정했습니다.
 
     - name: Run email script
       env:
@@ -35,6 +35,6 @@ jobs:
         SMTP_PORT: ${{ secrets.SMTP_PORT }}
         SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-      run: python wanted_mailer_auto.py
+      run: python wanted_mailer_auto.py # 👈 여기 들여쓰기를 수정했습니다.
 
 
